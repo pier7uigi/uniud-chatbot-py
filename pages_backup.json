@@ -1,0 +1,23 @@
+[
+  {
+    "id": "ateneo-tasse",
+    "department": "ATENEO",
+    "url": "https://www.uniud.it/it/servizi/servizi-studenti/tasse",
+    "title": "Tasse e contributi di Ateneo",
+    "content": "Informazioni generali su tasse e contributi per tutti gli studenti dell'Università di Udine: importi, fasce ISEE, scadenze e modalità di pagamento."
+  },
+  {
+    "id": "ateneo-immatricolazioni",
+    "department": "ATENEO",
+    "url": "https://www.uniud.it/it/servizi/servizi-studenti/immatricolazioni",
+    "title": "Immatricolazioni UniUD",
+    "content": "Guida generale alle immatricolazioni dell'Università di Udine: requisiti di accesso, bandi, scadenze e procedura online."
+  },
+  {
+    "id": "dmed-presentazione",
+    "department": "DMED",
+    "url": "https://www.uniud.it/it/ateneo-uniud/organizzazione/dipartimenti/dmed",
+    "title": "DMED - Dipartimento di Medicina",
+    "content": "Pagina di presentazione del Dipartimento di Medicina (DMED) dell'Università di Udine: attività didattica, corsi di laurea, servizi per gli studenti e contatti."
+  }
+]

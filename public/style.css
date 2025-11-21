@@ -1,0 +1,741 @@
+:root {
+  --uniud-blue: #0000ff;
+
+  /* colore principale generico che può cambiare per dipartimento */
+  --accent: var(--uniud-blue);
+
+  --bg: #f3f4f6;
+  --card-bg: #ffffff;
+  --text: #0f172a;
+  --muted: #6b7280;
+  --accent-soft: #e0e7ff;
+  --border-subtle: #e5e7eb;
+  --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.18);
+
+  /* DIES */
+  --dies-accent: #f59e0b;
+  --dies-bg1: #fffbeb;
+  --dies-bg2: #fef3c7;
+
+  /* DI4A */
+  --di4a-accent: #0ea5e9;
+  --di4a-bg1: #ecfeff;
+  --di4a-bg2: #bae6fd;
+
+  /* DMED */
+  --dmed-accent: #16a34a;
+  --dmed-bg1: #ecfdf3;
+  --dmed-bg2: #bbf7d0;
+
+  /* DILL */
+  --dill-accent: #7c3aed;
+  --dill-bg1: #f5f3ff;
+  --dill-bg2: #ddd6fe;
+
+  /* DISG */
+  --disg-accent: #b91c1c;
+  --disg-bg1: #fef2f2;
+  --disg-bg2: #fecaca;
+
+  /* DMIF */
+  --dmif-accent: #1d4ed8;
+  --dmif-bg1: #e0ecff;
+  --dmif-bg2: #bfdbfe;
+
+  /* DIUM */
+  --dium-accent: #f97316;
+  --dium-bg1: #fff7ed;
+  --dium-bg2: #fed7aa;
+
+  /* DPIA */
+  --dpia-accent: #0284c7;
+  --dpia-bg1: #e0f2fe;
+  --dpia-bg2: #bae6fd;
+}
+
+/* Temi background + override accent ------------------------------- */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    sans-serif;
+  background: radial-gradient(
+    circle at top,
+    #e0ecff 0,
+    #f9fafb 45%,
+    #eef2ff 100%
+  );
+  color: var(--text);
+}
+
+/* default Ateneo */
+body.theme-default {
+  --accent: var(--uniud-blue);
+  background: radial-gradient(
+    circle at top,
+    #dbe5ff 0,
+    #f9fafb 45%,
+    #e3e8ff 100%
+  );
+}
+
+/* DIES giallino più vivace */
+body.theme-dies {
+  --accent: var(--dies-accent);
+  background: radial-gradient(
+    circle at top,
+    var(--dies-bg2) 0,
+    var(--dies-bg1) 45%,
+    #fefce8 100%
+  );
+}
+
+/* DI4A turchese */
+body.theme-di4a {
+  --accent: var(--di4a-accent);
+  background: radial-gradient(
+    circle at top,
+    var(--di4a-bg2) 0,
+    var(--di4a-bg1) 45%,
+    #ecfeff 100%
+  );
+}
+
+/* DMED verde */
+body.theme-dmed {
+  --accent: var(--dmed-accent);
+  background: radial-gradient(
+    circle at top,
+    var(--dmed-bg2) 0,
+    var(--dmed-bg1) 45%,
+    #ecfdf3 100%
+  );
+}
+
+/* DILL viola */
+body.theme-dill {
+  --accent: var(--dill-accent);
+  background: radial-gradient(
+    circle at top,
+    var(--dill-bg2) 0,
+    var(--dill-bg1) 45%,
+    #f5f3ff 100%
+  );
+}
+
+/* DISG rosso */
+body.theme-disg {
+  --accent: var(--disg-accent);
+  background: radial-gradient(
+    circle at top,
+    var(--disg-bg2) 0,
+    var(--disg-bg1) 45%,
+    #fef2f2 100%
+  );
+}
+
+/* DMIF blu */
+body.theme-dmif {
+  --accent: var(--dmif-accent);
+  background: radial-gradient(
+    circle at top,
+    var(--dmif-bg2) 0,
+    var(--dmif-bg1) 45%,
+    #e0ecff 100%
+  );
+}
+
+/* DIUM arancio */
+body.theme-dium {
+  --accent: var(--dium-accent);
+  background: radial-gradient(
+    circle at top,
+    var(--dium-bg2) 0,
+    var(--dium-bg1) 45%,
+    #fff7ed 100%
+  );
+}
+
+/* DPIA azzurro */
+body.theme-dpia {
+  --accent: var(--dpia-accent);
+  background: radial-gradient(
+    circle at top,
+    var(--dpia-bg2) 0,
+    var(--dpia-bg1) 45%,
+    #e0f2fe 100%
+  );
+}
+
+/* Layout principale -------------------------------------------------- */
+.app-shell {
+  max-width: 980px;
+  margin: 24px auto;
+  padding: 16px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 16px;
+}
+
+/* Logo Baymax-like --------------------------------------------------- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 50px;
+  height: 32px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 2px solid var(--uniud-blue);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
+  position: relative;
+}
+
+.face-eye {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #111827;
+}
+
+.face-line {
+  flex: 1;
+  height: 2px;
+  background: #111827;
+  margin: 0 4px;
+  border-radius: 999px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-weight: 750;
+  font-size: 21px;
+  letter-spacing: 0.03em;
+}
+
+.logo-subtitle {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Barra blu link rapidi ----------------------------------------------- */
+.top-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--uniud-blue), #3b82f6);
+  color: #f9fafb;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
+  overflow-x: auto;
+}
+
+.top-links a {
+  font-size: 12px;
+  font-weight: 500;
+  color: #e5efff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.top-links a:hover {
+  text-decoration: underline;
+}
+
+.icon-btn {
+  border: none;
+  background: rgba(15, 23, 42, 0.15);
+  color: #f9fafb;
+  border-radius: 999px;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Controlli ----------------------------------------------------------- */
+.controls {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mode-switch {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 4px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  backdrop-filter: blur(16px);
+}
+
+.mode-btn {
+  border: none;
+  background: transparent;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+}
+
+.mode-btn.active {
+  background: #0f172a;
+  color: #f9fafb;
+  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.4);
+}
+
+.mode-btn i {
+  font-size: 12px;
+}
+
+/* Select moderna ----------------------------------------------------- */
+.dept-select-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dept-select-wrapper.hidden {
+  display: none;
+}
+
+.dept-select-wrapper label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.select-shell {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.select-shell select {
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  padding: 9px 40px 9px 14px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.96);
+  appearance: none;
+  outline: none;
+}
+
+.select-shell select:focus {
+  border-color: var(--uniud-blue);
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.4);
+}
+
+.select-icon {
+  position: absolute;
+  right: 14px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Scorciatoie --------------------------------------------------------- */
+.quick-actions {
+  margin-bottom: 10px;
+}
+
+.qa-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.qa-chips {
+  margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.qa-chip {
+  border-radius: 999px;
+  border: none;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  color: #111827;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.qa-chip.primary-chip {
+  background: var(--accent);
+  color: #f9fafb;
+  border-color: #1d4ed8;
+}
+
+.qa-chip i {
+  font-size: 11px;
+}
+
+/* Bottoni ------------------------------------------------------------- */
+.ghost-btn {
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: rgba(255, 255, 255, 0.92);
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+}
+
+.ghost-btn i {
+  font-size: 13px;
+}
+
+.primary-btn {
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, var(--uniud-blue), #4f46e5);
+  color: white;
+  padding: 10px 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.4);
+}
+
+/* Chat --------------------------------------------------------------- */
+.chat-shell {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 22px;
+  box-shadow: var(--shadow-soft);
+  padding: 16px 16px 10px;
+  min-height: 380px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Messaggi base ------------------------------------------------------ */
+.msg {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.msg.user {
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+  background: linear-gradient(135deg, var(--uniud-blue), #4f46e5);
+  color: #f9fafb;
+}
+
+.msg.bot {
+  margin-right: auto;
+  border-bottom-left-radius: 4px;
+  background: #f9fafb;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+  color: #0f172a;
+}
+
+.msg.bot a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.msg.bot a:hover {
+  text-decoration: underline;
+}
+
+/* 🔹 RISPOSTE STRUTTURATE ------------------------------------------- */
+/* Titoli interni nella risposta */
+.msg.bot h3 {
+  margin: 4px 0 4px;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+/* Sezioni di risposta con bordo colorato */
+.answer-section {
+  margin-top: 6px;
+  padding: 6px 8px;
+  border-radius: 10px;
+  border-left: 3px solid var(--accent);
+  background: rgba(148, 163, 184, 0.08);
+  font-size: 13px;
+}
+
+/* Box "Attenzione" */
+.answer-warning {
+  margin-top: 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border-left: 3px solid #b91c1c;
+  background: #fef2f2;
+  color: #7f1d1d;
+  font-size: 13px;
+}
+
+/* Tabelle (es. tasse per fasce ISEE) */
+.answer-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+.answer-table th,
+.answer-table td {
+  border: 1px solid #e5e7eb;
+  padding: 4px 6px;
+  text-align: left;
+}
+
+.answer-table th {
+  background: rgba(15, 23, 42, 0.85);
+  color: #f9fafb;
+  font-weight: 600;
+}
+
+.answer-table tr:nth-child(even) td {
+  background: #f9fafb;
+}
+
+/* Typing / robottino ----------------------------------------------- */
+.typing-indicator-wrapper {
+  display: flex;
+  margin-right: auto;
+}
+
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.96);
+  color: #e5f2ff;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.5);
+}
+
+.typing-robot {
+  width: 26px;
+  height: 26px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typing-robot .eyes span {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: #e0f2fe;
+  margin: 0 1px;
+  animation: eye-blink 3.2s infinite;
+}
+
+.typing-robot .mouth {
+  position: absolute;
+  bottom: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 6px;
+  border-radius: 999px;
+  border: 2px solid #bbf7d0;
+  border-top-color: transparent;
+}
+
+.typing-dots span {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: #e0f2fe;
+  margin: 0 2px;
+  animation: dot-bounce 1.2s infinite;
+}
+
+.typing-dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.typing-dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Input -------------------------------------------------------------- */
+.input-shell {
+  margin-top: 10px;
+}
+
+.chat-form {
+  display: flex;
+  gap: 8px;
+}
+
+.chat-form input {
+  flex: 1;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  padding: 10px 14px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+/* Settings modal ----------------------------------------------------- */
+.settings-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.settings-modal.hidden {
+  display: none;
+}
+
+.settings-dialog {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 14px 16px 16px;
+  width: 260px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.35);
+}
+
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.settings-header span {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settings-label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.lang-buttons {
+  display: inline-flex;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  padding: 6px 14px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.lang-btn.active {
+  background: var(--uniud-blue);
+  color: #f9fafb;
+}
+
+/* Utilities ---------------------------------------------------------- */
+.hidden {
+  display: none;
+}
+
+/* Animazioni --------------------------------------------------------- */
+@keyframes eye-blink {
+  0%,
+  4%,
+  100% {
+    transform: scaleY(1);
+  }
+  2% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes dot-bounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  30% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+/* Mobile ------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .app-shell {
+    margin: 12px auto;
+    padding: 10px;
+  }
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .msg {
+    max-width: 100%;
+  }
+}
